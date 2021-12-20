@@ -9,7 +9,7 @@ SITE NAVBAR CLASSES
     left: 0;
     width: 100vw;
     height: 70px;
-    padding: 0px 8ch;
+    padding: 0px 6%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -26,90 +26,33 @@ SITE NAVBAR CLASSES
     font-family: $logo_font;
     font-size: 1.5em;
     color: $importance_color;
-}
 
-.site-navbar__nav-menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    list-style-type: none;
-
-    .site-navbar__nav-menu__feature {
-        position: relative;
-        height: 70px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 3ch;
-        font-family: $highlight_font;
-
-        .site-navbar__nav-menu__link {
-            color: $subtitle_text_color;
-        }
-
-        .site-navbar__nav-menu__chevron {
-            font-size: 0.7em;
-            margin: 0 0 0 5px;
-        }
-
-        &:hover .site-navbar__nav-submenu {
-            position: absolute;
-            min-width: 100px;
-            top: calc(50% + 1.3em);
-            left: 0;
-            display: flex;
-            flex-direction: column;
-            list-style-type: none;
-            padding: 0.5em 1ch;
-            border-radius: 5px;
-            background-color: $background_color;
-            box-shadow: -2px 2px 10px $shadow_color;
-        }
-
-        &:hover .site-navbar__nav-menu__chevron{
-            animation: rotateChevron 0.7s linear forwards;
-        }
-
-        &:hover::after {
-            content: "";
-            position: absolute;
-            top: calc(50% + 0.7em);
-            left: 0px;
-            animation: renderDecor 0.7s forwards;
-            height: 4px;
-            background-color: $subtitle_text_color;
-        }
+    .site-navbar__letter-icon__img {
+        height: 30px;
     }
 }
 
-.site-navbar__nav-submenu {
+.site-navbar__nav-menu {
     display: none;
-    list-style-type: none;
-}
-
-.site-navbar__nav-submenu__feature {
-    padding: 0.5em;
-    width: 100%;
-    border-bottom: solid 2px $shadow_color;
-}
-
-.site-navbar__nav-submenu__feature:last-child {
-    padding: 0.5em;
-    width: 100%;
-    border: none;
 }
 
 .site-navbar__contact-button {
-    padding: 0.7em 2ch;
-    border: solid 2px $highlight_color;
+    display: none;
+}
+
+.site-navbar__dropdown-trigger {
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7em;
+    border: none;
     background-color: $background_color;
-    color: $highlight_color;
-    border-radius: 35px;
-    font-family: $highlight_font;
 
     &:hover {
-        background-color: $highlight_color;
-        color: $background_color;
+        animation: rotateBurger 0.5s forwards;
     }
 }
 
@@ -120,4 +63,111 @@ SITE NAVBAR CLASSES
 
 @keyframes rotateChevron {
     100% {transform: rotate(90deg)};
+}
+
+@keyframes rotateBurger {
+    100% {transform: rotate(360deg)};
+}
+
+@include media-lg {
+    .site-navbar__nav-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        list-style-type: none;
+    
+        .site-navbar__nav-menu__feature {
+            position: relative;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 2ch;
+            font-family: $highlight_font;
+    
+            .site-navbar__nav-menu__link {
+                color: $subtitle_text_color;
+            }
+    
+            .site-navbar__nav-menu__chevron {
+                font-size: 0.7em;
+                margin: 0 0 0 5px;
+                transform: translateY(2px);
+            }
+    
+            &:hover .site-navbar__nav-submenu {
+                position: absolute;
+                min-width: 100px;
+                top: calc(50% + 1.3em);
+                left: 0;
+                display: flex;
+                flex-direction: column;
+                list-style-type: none;
+                padding: 0.5em 1ch;
+                border-radius: 5px;
+                background-color: $background_color;
+                box-shadow: -2px 2px 10px $shadow_color;
+            }
+    
+            &:hover .site-navbar__nav-menu__chevron{
+                animation: rotateChevron 0.5s linear forwards;
+            }
+    
+            &:hover::after {
+                content: "";
+                position: absolute;
+                top: calc(50% + 0.7em);
+                left: 0px;
+                animation: renderDecor 0.5s forwards;
+                height: 4px;
+                background-image: linear-gradient(to right, $primary_color 40%, $highlight_color 65%, $emphasis_color 100%);
+            }
+        }
+    }
+    
+    .site-navbar__nav-submenu {
+        display: none;
+        list-style-type: none;
+    }
+    
+    .site-navbar__nav-submenu__feature {
+        padding: 0.5em;
+        width: 100%;
+        border-bottom: solid 2px $shadow_color;
+    }
+    
+    .site-navbar__nav-submenu__feature:last-child {
+        padding: 0.5em;
+        width: 100%;
+        border: none;
+    }
+    
+    .site-navbar__contact-button {
+        display: block;
+        padding: 0.7em 2ch;
+        border: solid 2px $highlight_color;
+        background-color: $background_color;
+        color: $highlight_color;
+        border-radius: 35px;
+        font-family: $highlight_font;
+    
+        &:hover {
+            background-color: $highlight_color;
+            color: $background_color;
+        }
+    }
+
+    .site-navbar__dropdown-trigger {
+        display: none;
+    }
+}
+
+@include media-xl {
+    .site-navbar__nav-menu {
+    
+        .site-navbar__nav-menu__feature {
+            margin: 0 3ch;
+        }
+
+    }
 }

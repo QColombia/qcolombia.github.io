@@ -1,0 +1,102 @@
+/*
+SITE DROPDOWN CLASSES
+*/
+
+.dropdown {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    z-index: 9;
+    top: 70px;
+    width: 100vw;
+    min-height: 600px;
+    height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    padding: 3em 5ch;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: $background_color;
+    overflow: scroll;
+    transition: opacity 0.3s;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.dropdown__nav-menu {
+    list-style: none;
+    font-family: $highlight_font;
+    padding: 0 0.7ch;
+
+    .dropdown__nav-menu__feature {
+        padding: 0.5em 0;
+
+        .dropdown__nav-menu__link {
+            position: relative;
+            color: $highlight_color;
+            font-size: 1.5em;
+
+            &:hover::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: calc(100% + 2px);
+                height: 4px;
+                animation: renderDecor 0.5s forwards;
+                background-image: linear-gradient(to right, $primary_color 40%, $highlight_color 65%, $emphasis_color 100%);
+            }
+        }
+
+    }
+
+    .dropdown__nav-submenu {
+        list-style: none;
+        padding: 0.2em 0 0.2em 2ch;
+
+        .dropdown__nav-submenu__feature {
+            margin: 0.5em 0;
+
+            .dropdown__nav-submenu__link {
+                color: $tertiary_color;
+                position: relative;
+
+                &:hover::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: calc(100% + 2px);
+                    height: 4px;
+                    animation: renderDecor 0.5s forwards;
+                    background-color: $tertiary_color;
+                }
+
+            }
+
+        }
+    }
+
+}
+
+.dropdown__contact-button {
+    display: block;
+    padding: 0.7em 2ch;
+    border: solid 2px $highlight_color;
+    background-color: $background_color;
+    color: $highlight_color;
+    border-radius: 35px;
+    font-family: $highlight_font;
+
+    &:hover {
+        background-color: $highlight_color;
+        color: $background_color;
+    }
+}
+
+@include media-lg {
+    .dropdown {
+        display: none;
+    }
+}
+

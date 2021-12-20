@@ -1,4 +1,5 @@
 @import "./fonts.scss";
+@import "./mixins.scss";
 @import "./_variables/document_colors.scss";
 @import "./_variables/document_fonts.scss";
 
@@ -30,4 +31,5 @@ h3, h4, h5, h6 {
   color: $subtitle_text_color;
 }
 
-@import "./_includes/shared/navbar.scss"
+@import "./_includes/shared/navbar.scss";
+@import "./_includes/shared/dropdown.scss";

@@ -1,6 +1,6 @@
 <nav class="site-navbar">
     <a href="/" class="site-navbar__letter-icon">
-        QColombia
+        <img class="site-navbar__letter-icon__img" src="{{site.url}}/assets/img/QColombiaLetterLogo.svg" alt="QColombia"/>
     </a>
     <ul class="site-navbar__nav-menu">
         {% for item in site.data.navigation %}
@@ -48,4 +48,7 @@
     >
         Contáctanos
     </a>
+    <button class="site-navbar__dropdown-trigger" onclick="triggerDropdown()">
+        <i class="fas fa-bars" id="dropdown-trigger-icon"></i>
+    </button>
 </nav>

@@ -1,38 +1,47 @@
-<nav class="dropdown">
-    <div class="dropdown__letter-icon">
-        QColombia
-    </div>
+<div class="dropdown" id="dropdown-menu">
     <ul class="dropdown__nav-menu">
+
         {% for item in site.data.navigation %}
+
             {% assign submenu = item.submenu_options %}
+
             <li class="dropdown__nav-menu__feature">
+
                 <a 
                     href="{{ item.link }}" 
                     class="dropdown__nav-menu__link"
                 >
                     {{ item.feature | capitalize }}
                 </a>
-                {% if submenu %}
-                    <ul class="dropdown__nav-submenu">
-                        {%  for option in submenu %}
-                            <li class="dropdown__nav-submenu__feature">
-                                <a 
-                                    href="{{ option.link }}" 
-                                    class="dropdown__nav-menu__link"
-                                >
-                                    {{ option.feature | capitalize }}
-                                </a>            
-                            </li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
+
             </li>
+
+            {% if submenu %}
+
+                <ul class="dropdown__nav-submenu">
+
+                    {%  for option in submenu %}
+                        <li class="dropdown__nav-submenu__feature">
+                            <a 
+                                href="{{ option.link }}" 
+                                class="dropdown__nav-submenu__link"
+                            >
+                                {{ option.feature | capitalize }}
+                            </a>            
+                        </li>
+                    {% endfor %}
+
+                </ul>
+
+            {% endif %}
+
         {% endfor %}
+
     </ul>
     <a 
         href="mailto:{{ site.contact_mail }}"
         class="dropdown__contact-button"
     >
-        Contacto
+        Contáctanos
     </a>
-</nav>
+</div>

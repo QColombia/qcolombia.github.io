@@ -1,0 +1,25 @@
+$md-screen: 768px;
+$lg-screen: 1024px;
+$xl-screen: 1250px;
+
+/*
+Media queries
+*/
+
+@mixin media-md {
+  @media screen and (min-width: $md-screen) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media screen and (min-width: $lg-screen) {
+    @content;
+  }
+}
+
+@mixin media-xl {
+  @media screen and (min-width: $xl-screen) {
+    @content;
+  }
+}
