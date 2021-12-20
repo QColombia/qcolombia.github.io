@@ -1,0 +1,28 @@
+- feature: cursos
+  link: /cursos
+  submenu_options:
+    - feature: curso 1
+      link: /cursos/curso-1
+    - feature: curso 2
+      link: /cursos/curso-2
+    - feature: curso 3
+      link: /cursos/curso-3
+
+- feature: blog
+  link: /blog
+
+- feature: proyectos
+  link: https://github.com/
+  submenu_options:
+    - feature: github
+      link: https://github.com/
+    - feature: publicaciones
+      link: /produccion
+    - feature: colaboraciones
+      link: /colabs
+
+- feature: eventos
+  link: /eventos
+
+- feature: acerca de
+  link: /about

@@ -1,0 +1,51 @@
+<nav class="site-navbar">
+    <a href="/" class="site-navbar__letter-icon">
+        QColombia
+    </a>
+    <ul class="site-navbar__nav-menu">
+        {% for item in site.data.navigation %}
+
+            {% assign submenu = item.submenu_options %}
+
+            <li class="site-navbar__nav-menu__feature">
+                <a 
+                    href="{{ item.link }}" 
+                    class="site-navbar__nav-menu__link"
+                >
+                    {{ item.feature | capitalize }}
+                </a>
+
+                {% if submenu %}
+
+                    <span class="site-navbar__nav-menu__chevron">
+                        <i class="fas fa-chevron-right"></i>
+                    </span>
+
+                    <ul class="site-navbar__nav-submenu">
+
+                        {%  for option in submenu %}
+                            <li class="site-navbar__nav-submenu__feature">
+                                <a 
+                                    href="{{ option.link }}" 
+                                    class="site-navbar__nav-menu__link"
+                                >
+                                    {{ option.feature | capitalize }}
+                                </a>            
+                            </li>
+                        {% endfor %}
+
+                    </ul>
+
+                {% endif %}
+
+            </li>
+
+        {% endfor %}
+    </ul>
+    <a 
+        href="mailto:{{ site.contact_mail }}"
+        class="site-navbar__contact-button"
+    >
+        Contáctanos
+    </a>
+</nav>

@@ -1,0 +1,33 @@
+@import "./fonts.scss";
+@import "./_variables/document_colors.scss";
+@import "./_variables/document_fonts.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 120px 0px;
+  background: $background_color;
+  color: $primary_text_color;
+  font-family: $generic_font;
+}
+
+h1 {
+  font-family: $main_title_font;
+  color: $title_text_color;
+}
+
+h2 {
+  font-family: $subtitle_font;
+  color: $subtitle_text_color;
+}
+
+h3, h4, h5, h6 {
+  font-family: $lower_title_font;
+  color: $subtitle_text_color;
+}
+
+@import "./_includes/shared/navbar.scss"
