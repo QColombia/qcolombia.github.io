@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+
+  {% include shared/head.html %}
+
+  <body>
+
+    {% include shared/navbar.html %}
+    {% include shared/dropdown.html %}
+
+    {% include home/hero-section.html %}
+
+    <div class="default-container">
+      {{ content }}
+    </div>
+    
+    {% include shared/footer.html %}
+
+  </body>
+
+  {% include shared/scripts.html %}
+
+</html>

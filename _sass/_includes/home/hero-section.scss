@@ -1,0 +1,114 @@
+/*
+HOME HERO SECTION CLASSES
+*/
+
+.home-hero {
+    margin: 70px 0 0 0;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    min-height: 500px;
+    height: calc(100vh - 70px);
+    overflow: hidden;
+    background-color: $primary_color;
+}
+
+.home-hero__carousel {
+    width: 100vw;
+    height: 100%;
+    position: relative;
+    transition: transform 0.7s;
+
+    .home-hero__carousel__slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+#bogota-hero {
+    background-image: url("../img/Bogota-hero-bg.png");
+    background-color: $lighter_primary_color;
+    filter: blur(1px);
+}
+
+#physics-hero {
+    background-image: url("../img/Physics-hero-bg.png");
+    background-color: $lighter_primary_color;
+    filter: blur(2px);
+}
+
+#code-hero {
+    background-image: url("../img/Code-hero-bg.png");
+    background-color: $lighter_primary_color;
+    filter: blur(2px);
+}
+
+.home-hero__carousel__button-container {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    z-index: 8;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -80%);
+
+    button {
+        cursor: pointer;
+    }
+
+    .home-hero__carousel__button {
+        margin: 0 1ch;
+        height: 50px;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: none;
+        font-size: 2em;
+        font-weight: 900;
+        color: $tertiary_color;
+        border: 6px solid $tertiary_color;
+
+        &:hover {
+            color: $alternative_bg_color;
+            border: 6px solid $alternative_bg_color;
+        }
+    }
+
+    .home-hero__carousel__nav-button {
+        margin: 15px 1ch;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background: none;
+        font-weight: 300;
+        color: $tertiary_color;
+        border: 10px solid $tertiary_color;
+
+        &:hover {
+            color: $alternative_bg_color;
+            border: 10px solid $alternative_bg_color;
+        }
+    }
+
+    .home-hero__carousel__nav-button.active {
+        margin: 15px 1ch;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background: none;
+        font-weight: 300;
+        color: $alternative_bg_color;
+        border: 10px solid $alternative_bg_color;
+    }
+}

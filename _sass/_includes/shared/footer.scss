@@ -1,0 +1,43 @@
+/*
+SITE FOOTER CLASSESº
+*/
+
+.site-footer {
+    position: absolute;
+    bottom: -70px;
+    left: 0;
+    width: 100vw;
+    background-color: $lighter_primary_color;
+    padding: 1em 2ch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-footer__copyright {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.site-footer__icon {
+    height: 2em;
+    margin: 0 0.5em 0 0;
+}
+
+.site-footer__copyright-info {
+    font-family: $highlight_font;
+    font-size: 1.2em;
+    color: $highlight_color;
+    text-align: center;
+}
+
+.site-footer__social-media-container {
+    font-size: 2em;
+    margin: 0.3em 0 0 0;
+    a {
+        color: $highlight_color;
+        text-decoration: none;
+    }
+}

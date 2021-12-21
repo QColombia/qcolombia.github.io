@@ -10,10 +10,12 @@
 }
 
 body {
-  margin: 120px 0px;
+  margin: 0; 
+  min-height: 100vh;
   background: $background_color;
   color: $primary_text_color;
   font-family: $generic_font;
+  position: relative;
 }
 
 h1 {
@@ -31,5 +33,20 @@ h3, h4, h5, h6 {
   color: $subtitle_text_color;
 }
 
+p {
+  margin: 1.2em 0;
+  line-height: 1.5em;
+}
+
+.default-container {
+  margin: 70px auto 0 auto;
+  padding: 2em 4ch 4em 4ch;
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+}
+
 @import "./_includes/shared/navbar.scss";
 @import "./_includes/shared/dropdown.scss";
+@import "./_includes/shared/footer.scss";
+@import "./_includes/home/hero-section.scss";
