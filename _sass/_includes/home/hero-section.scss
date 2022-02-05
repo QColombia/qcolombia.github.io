@@ -37,19 +37,19 @@ HOME HERO SECTION CLASSES
 #bogota-hero {
     background-image: url("../img/Bogota-hero-bg.png");
     background-color: $lighter_primary_color;
-    filter: blur(1px);
+    filter: blur(3px);
 }
 
 #physics-hero {
     background-image: url("../img/Physics-hero-bg.png");
     background-color: $lighter_primary_color;
-    filter: blur(2px);
+    filter: blur(3px);
 }
 
 #code-hero {
     background-image: url("../img/Code-hero-bg.png");
     background-color: $lighter_primary_color;
-    filter: blur(2px);
+    filter: blur(3px);
 }
 
 .home-hero__carousel__button-container {
@@ -74,8 +74,9 @@ HOME HERO SECTION CLASSES
         justify-content: center;
         border-radius: 50%;
         background: none;
-        font-size: 2em;
+        font-size: 1.8em;
         font-weight: 900;
+        padding: 0;
         color: $tertiary_color;
         border: 6px solid $tertiary_color;
 

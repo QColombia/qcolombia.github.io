@@ -16,6 +16,7 @@ body {
   color: $primary_text_color;
   font-family: $generic_font;
   position: relative;
+  padding-bottom: 40px;
 }
 
 h1 {
@@ -50,3 +51,4 @@ p {
 @import "./_includes/shared/dropdown.scss";
 @import "./_includes/shared/footer.scss";
 @import "./_includes/home/hero-section.scss";
+@import "./_includes/home/aspects-section.scss";

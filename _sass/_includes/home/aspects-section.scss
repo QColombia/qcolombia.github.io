@@ -1,0 +1,112 @@
+/*
+HOME ASPECTS SECTION CLASSES
+*/
+
+.home-aspects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 70px auto;
+
+    h1 {
+        margin-bottom: 35px;
+    }
+}
+
+.home-aspects__aspect-window {
+    position: relative;
+    width: 300px;
+    overflow: hidden;
+
+    @include media-lg {
+        width: fit-content;
+    }
+}
+
+.home-aspects__button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    @include media-lg {
+        display: none;
+    }
+
+    .aspect__nav-button {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: $tertiary_color;
+        border: none;
+        margin: 0 10px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $highlight_color;
+        }
+    }
+}
+
+.home-aspects__aspect-container {
+    display: flex;
+    transform: translate(0px);
+    transition: transform ease-in-out 0.5s;
+
+    @include media-lg {
+        transform: translate(0px) !important;
+    }
+}
+
+.home-aspects__aspect-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    min-width: 300px;
+    width: 300px;
+    padding: 35px;
+
+    @include media-lg {
+        margin: 0 20px;
+    }
+
+    .aspect-item__icon {
+        color: $primary-color;
+        transition: all ease-in-out 0.2s;
+        transform: scale(1);
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .aspect-item__title {
+        margin: 32px 0 8px 0;
+    }
+
+    .aspect-item__description {
+        margin: 8px 0 16px 0;
+        max-height: 100px;
+        text-overflow: ellipsis;
+    }
+
+    .aspect-item__action {
+        display: block;
+        padding: 0.7em 2ch;
+        border: solid 2px $tertiary_color;
+        background-color: $background_color;
+        color: $tertiary_color;
+        border-radius: 35px;
+        text-decoration: none;
+        font-family: $highlight_font;
+        cursor: pointer;
+    
+        &:hover {
+            background-color: $tertiary_color;
+            color: $background_color;
+        }
+    }
+}
