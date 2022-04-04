@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+
+  {% include shared/head.html %}
+
+  <body>
+
+    {% include shared/navbar.html %}
+    {% include shared/dropdown.html %}
+
+    <div class="post-hero">
+        <div class="post-hero__description">
+            <h1 class="hero-title">{{ page.title }}</h1>
+            <p class="hero-info">{{ page.author }} | {{ page.date | slice: 0, 10 }}</p>
+            <p class="hero-excerpt">
+                {{ page.excerpt }}
+            </p>
+        </div>
+        <figure class="post-hero__image">
+            {% if page.thumbnail %}
+                <img src="{{ page.thumbnail }}" alt="">
+            {% else %}
+                <img src="{{ site.default_thumbnail }}" alt="">
+            {% endif %}
+        </figure>
+    </div>
+
+    <section class="post-content">
+      {{ content }}
+    </section>
+    
+    {% include shared/footer.html %}
+
+  </body>
+
+  {% include shared/scripts.html %}
+
+</html>

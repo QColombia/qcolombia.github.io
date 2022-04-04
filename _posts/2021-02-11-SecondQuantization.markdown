@@ -1,9 +1,9 @@
 ---
-layout: default
+layout: post
 title:  "Segunda Cuantización en Química Cuántica"
 date:   2021-02-11 11:33:30 -0500
 category: Projects
-excerpt: Post de demostración para rellenar los huecos que se encuentran en la página web.
+excerpt: Post de demostración para rellenar los huecos que se encuentran en la página web. Este es el post default que viene con el tema minima de Jekyll, que es la herramienta usada para implementar este sition web.
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 

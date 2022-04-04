@@ -1,20 +1,16 @@
 ---
-layout: default
+layout: post
 title: "Simulación de un modelo fermiónico con Qiskit"
 date: 2021-03-08 15:14:40
 category: Projects
 author: Diego Herrera
-thumbnail: /assets/img/_posts/HubbardWithQiskit_files/thumbnail.png
-excerpt: Abordamos la simulación de sistemas fermiónicos utilizando procesadores cuánticos digitales
+thumbnail: /assets/img/posts/HubbardWithQiskit_files/thumbnail.png
+excerpt: Abordamos la simulación de sistemas fermiónicos utilizando procesadores cuánticos digitales. En particular, utilizamos la transformación de Jordan-Wigner (JWT), para simular un Hamiltoniano de Hubbard, siguiendo el traajo de Barends et. al.
 ---
-
-En este proyecto abordaremos la simulación de sistemas fermiónicos a través de un procesador cuántico digital. En particular, consideraremos el celebrado **Hamiltoniano de Hubbard**, de gran utilidad en la física del estado sólido. Para ello, realizaremos una breve introducción sobre la naturaleza física de los fermiones, así como las herramientas matemáticas que permiten representar un sistema de varias de estas partículas correlacionadas. Posteriormente, consideraremos la forma general de un Hamiltoniano de Hubbard, apuntando a la interpretación física general de sus partes.
-
-Con este concimiento previo, procederemos a abordar el problema de simular un sistema fermiónico descrito por el Hamiltoniano de Hubbard con un procesador cuántico digital. Introduciremos la **transformación de Jordan-Wigner (JWT)** y presentaremos una posible forma de utilizarla para mapear el Hamiltoniano fermiónico a un Hamiltoniano de qubits. Finalmente, presentaremos el algoritmo de simulación propuesto por **Barends et. al.** para estudiar la evolución temporal de un par de modos fermiónicos interactuantes. Con este proyecto esperamos ilustrar una de las aplicaciones más prometedoras de la computación cuánticas: la simulación de sistemas físicos.
 
 **NOTA:** Este artículo puede ser un poco exigente para el lector con poca experiencia en mecánica cuántica. Sin embargo, intentaremos condensar las ideas físicas fundamentales. El lector puede seguir este proyecto de forma interactiva desde nuestro servidor de MyBinder, haciendo click en el botón. Recomendamos hacer una lectura del post, de modo que las intuiciones físicas sean más claras a la hora de realizar la práctica.
 
-<p align="center">
+<p align="center" style="max-width: 99%; overflow: scroll;">
   <a href="https://mybinder.org/v2/gh/QC-FEM/QC-Articles/HEAD">
     <img src="https://mybinder.org/badge_logo.svg">
   </a>
@@ -40,8 +36,8 @@ En física cuántica, es conocido que todos los posibles estados de posición de
 
 Presentamos un ejemplo visual sobre la forma como podemos describir el estado de un sistema de varios fermiones en el espacio de Fock. Cada espín orbital se representa por $\|\chi_i\rangle$. Consideraremos una base de 4 orbitales, y un sistema de 2 partículas.
 
-<p align="center">
-    <img src="/assets/img/_posts/HubbardWithQiskit_files/FockSpaceDemo.png" height="400" width="700">
+<p align="center" style="max-width: 99%; overflow: scroll;">
+    <img src="/assets/img/posts/HubbardWithQiskit_files/FockSpaceDemo.png" height="400" width="700">
 </p>
 
 Para un conjunto determinado de $M$ espín orbitales, podemos especificar el estado de un sistema de varias partículas diciendo si una partícula se encuentra en un estado descrito por un espín orbital del mismo. En tal caso, diremos que un particular espín orbital *está ocupado*. Estas ideas pueden ser un poco abstractas para aquellos lectores con énfasis en ciencias de la computación. Sin embargo, esperamos que los ejemplos gráficos logren generar una intuición sobre la descripción de un sistema de varias partículas.
@@ -74,8 +70,8 @@ Nos concentraremos en los operadores de creación y aniquilación fermiónicos. 
 
 Para describir un sistema de varioas fermiones, utilizaremos un conjunto de $M$ operadores de creación, uno por cada orbital. Denotaremos el operador de creación del $i$-ésimo orbital con $\hat{a}_i$. Incluimos una representación gráfica de lo que nos gustaría que hiciera un operador de creación arbitrario
 
-<p align="center">
-    <img src="/assets/img/_posts/HubbardWithQiskit_files/Creation.png" height="250" width="450">
+<p align="center" style="max-width: 99%; overflow: scroll;">
+    <img src="/assets/img/posts/HubbardWithQiskit_files/Creation.png" height="250" width="450">
 </p>
 
 Así que postulamos que la acción de cualquiera de estos operadores sobre cualquier estado base de nuestro espacio de Fock es tal que
@@ -105,8 +101,8 @@ Aunque el lector con fundamentación en física cuántica pueda sentirse un poco
 
 Por cada operador de creación, tendremos un operador de aniquilación, que denotaremos con $\hat{a}_i$. A continuación ilustramos gráficamente lo que nos gustaría que hiciera un operador de aniquilación
 
-<p align="center">
-    <img src="/assets/img/_posts/HubbardWithQiskit_files/Anihilation.png" height="250" width="450">
+<p align="center" style="max-width: 99%; overflow: scroll;">
+    <img src="/assets/img/posts/HubbardWithQiskit_files/Anihilation.png" height="250" width="450">
 </p>
 
 No hemos utilizado la daga en vano. De hecho, postulamos que $\hat{a}_i = (\hat{a}^{\dagger}_i)^{\dagger}$. Donde la daga indica transpuesto complejo conjugado (i. e. *Hermítico conjugado*). Invitamos al lector a convencerse de que la acción de un operador de aniquilación sobre un estado de la base de nuestro espacio de Fock es
@@ -144,8 +140,8 @@ Estos operadores no son tan interesantes, puesto que no describen la energía ci
 
 Los operadores de excitación permiten "mover" una partícula de un orbital a otro. Representamos gráficamente la acción de un operador de excitación
 
-<p align="center">
-    <img src="/assets/img/_posts/HubbardWithQiskit_files/Excitation.png" height="250" width="450">
+<p align="center" style="max-width: 99%; overflow: scroll;">
+    <img src="/assets/img/posts/HubbardWithQiskit_files/Excitation.png" height="250" width="450">
 </p>
 
 Definimos matemáticamente estos operadores como
@@ -160,8 +156,8 @@ Antes de ello, invitamos al lector a convencerse de que cualquier cadena de oper
 
 Es un operador que conserva el número de partículas. A partir de la intuición que hemos desarrollado sobre los operadores de creación y aniquilación, vemos que este mezcla 4 orbitales. En particular, este tipo de operadores "mueven" dos partículas. Por tanto, los denominaremos operadores de *dos partículas*. Incluimos una representación pictórica de su acción sobre un sistema de dos fermiones
 
-<p align="center">
-    <img src="/assets/img/_posts/HubbardWithQiskit_files/TwoFermion.png" height="250" width="450">
+<p align="center" style="max-width: 99%; overflow: scroll;">
+    <img src="/assets/img/posts/HubbardWithQiskit_files/TwoFermion.png" height="250" width="450">
 </p>
 
 Con ellos podremos describir movimiento correlacionado en un sistema de varios fermiones.
@@ -172,8 +168,8 @@ Con ellos podremos describir movimiento correlacionado en un sistema de varios f
 
 Nos encontramos en capacidad de considerar uno de los Hamiltonianos más ampliamente utilizados en el estudo de la física del estado sólido. Podemos imaginar una red de puntos en el espacio, donde cada punto puede ser ocupado por un fermión. Esta red puede corresponder a la estructura cristalina de los átomos de un sólido. Incluimos una representación del sistema a considerar.
 
-<p align="center">
-    <img src="/assets/img/_posts/HubbardWithQiskit_files/LatticeHubbard.png" height="250" width="450">
+<p align="center" style="max-width: 99%; overflow: scroll;">
+    <img src="/assets/img/posts/HubbardWithQiskit_files/LatticeHubbard.png" height="250" width="450">
 </p>
 
 En este caso, nuestros operadores de creación y aniquilación "moveran" partículas entre los distintos puntos de la red. Los vértices de la red representaran centros de potencial. Consideraremos que los fermiones en la red son electrones. Así podremos describir el movimiento correlacionado de electrones y sus efectos en propiedades de conducción de un sólido. Comenzaremos considerando los efectos que tienen los núcleos atómicos en los puntos de red sobre el movimiento de un fermión. Posteriormente, incluiremos los efectos de la repulsión electrónica y otras interacciones de correlación.
@@ -182,8 +178,8 @@ En este caso, nuestros operadores de creación y aniquilación "moveran" partíc
 
 Tanto la energía cinética de un fermión, como su interacción con el potencial local de un punto de red no depende de la ocupación de los otros puntos. Por tanto, podremos representar estas cantidades utilizando operadores de un fermión. Aunque un tanto incorrecto, podemos intuir que un fermión con sufiente energía cinética podría "saltar" de un punto de red a otro. Por tanto, los operadores que describen el movimiento desacoplado son **de excitación**. Supondremos que un fermión solo puede saltar desde un punto de red a sus primeros vecinos
 
-<p align="center">
-    <img src="/assets/img/_posts/HubbardWithQiskit_files/NearestNeighbours.png" height="250" width="450">
+<p align="center" style="max-width: 99%; overflow: scroll;">
+    <img src="/assets/img/posts/HubbardWithQiskit_files/NearestNeighbours.png" height="250" width="450">
 </p>
 
 Así, nuestro Hamiltoniano parcial es
@@ -302,8 +298,8 @@ Simula.draw(output='mpl')
 
 
 
-{:refdef: style="text-align: center;"}
-![png](/assets/img/_posts/HubbardWithQiskit_files/HubbardWithQiskit_5_0.png)
+{:refdef: style="text-align: center; width: 99%; overflow: scroll;"}
+![png](/assets/img/posts/HubbardWithQiskit_files/HubbardWithQiskit_5_0.png)
 {:refdef}
 
 
@@ -329,8 +325,8 @@ Simula.draw(output='mpl')
 
 
 
-{:refdef: style="text-align: center;"}
-![png](/assets/img/_posts/HubbardWithQiskit_files/HubbardWithQiskit_7_0.png)
+{:refdef: style="text-align: center; width: 99%; overflow: scroll;"}
+![png](/assets/img/posts/HubbardWithQiskit_files/HubbardWithQiskit_7_0.png)
 {:refdef}
 
 
@@ -360,8 +356,8 @@ Simula.draw(output='mpl')
 
 
 
-{:refdef: style="text-align: center;"}
-![png](/assets/img/_posts/HubbardWithQiskit_files/HubbardWithQiskit_9_0.png)
+{:refdef: style="text-align: center; width: 99%; overflow: scroll;"}
+![png](/assets/img/posts/HubbardWithQiskit_files/HubbardWithQiskit_9_0.png)
 {:refdef}
 
 
@@ -391,8 +387,8 @@ Simula.draw(output='mpl')
 
 
 
-{:refdef: style="text-align: center;"}
-![png](/assets/img/_posts/HubbardWithQiskit_files/HubbardWithQiskit_11_0.png)
+{:refdef: style="text-align: center; width: 99%; overflow: scroll;"}
+![png](/assets/img/posts/HubbardWithQiskit_files/HubbardWithQiskit_11_0.png)
 {:refdef}
 
 
@@ -466,8 +462,8 @@ plt.show()
 ```
 
 
-{:refdef: style="text-align: center;"}
-![png](/assets/img/_posts/HubbardWithQiskit_files/HubbardWithQiskit_17_0.png)
+{:refdef: style="text-align: center; width: 99%; overflow: scroll;"}
+![png](/assets/img/posts/HubbardWithQiskit_files/HubbardWithQiskit_17_0.png)
 {:refdef}
 
 

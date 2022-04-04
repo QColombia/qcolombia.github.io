@@ -27,9 +27,11 @@ h1 {
 h2 {
   font-family: $subtitle_font;
   color: $subtitle_text_color;
+  margin: 1em 0;
 }
 
 h3, h4, h5, h6 {
+  margin: 0.7em 0;
   font-family: $lower_title_font;
   color: $subtitle_text_color;
 }
@@ -47,8 +49,16 @@ p {
   max-width: 1000px;
 }
 
+.mjx-chtml, .MJXc-display, .MathJax_Display {
+  max-width: 100%;
+  overflow: scroll;
+}
+
 @import "./_includes/shared/navbar.scss";
 @import "./_includes/shared/dropdown.scss";
 @import "./_includes/shared/footer.scss";
 @import "./_includes/home/hero-section.scss";
 @import "./_includes/home/aspects-section.scss";
+@import "./_includes/home/blog-section.scss";
+@import "./_includes/home/follow-section.scss";
+@import "./post.scss";

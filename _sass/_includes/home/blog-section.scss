@@ -1,0 +1,123 @@
+.home-blog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 70px auto;
+    background-color: $alternative_bg_color;
+
+    h1 {
+        margin: 70px auto;
+        color: $primary_color;
+    }
+}
+
+.home-blog__blog-action {
+    padding: 0 0 70px 0;
+    text-align: center;
+
+    .home-blog__action {
+        display: block;
+        padding: 0.7em 2ch;
+        border: solid 2px $primary_color;
+        background-color: $primary_color;
+        color: $highlight_color;
+        font-size: 1.2em;
+        border-radius: 35px;
+        text-decoration: none;
+        font-family: $highlight_font;
+        cursor: pointer;
+    
+        &:hover {
+            border-color: $tertiary_color;
+            background-color: $tertiary_color;
+            color: $background_color;
+        }
+    }
+}
+
+.home-blog__card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include media-lg {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+}
+
+.blog-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 300px;
+    width: 230px;
+    background-color: $background_color;
+    border: none;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 0 20px 70px 20px;
+    box-shadow: $secondary_text_color 1.95px 1.95px 2.6px;
+
+    .blog-card__title {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0;
+
+        a {
+            color: $highlight_color;
+            text-decoration: none;
+        }
+    }
+
+    .blog-card__thumbnail {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 130px;
+        width: 130px;
+        border-radius: 8px;
+        margin-top: 1.5em;
+        overflow: hidden;
+
+        .thumbnail__image {
+            height: 130px;
+            width: auto;
+            object-fit: cover;
+        }
+    }
+
+    .blog-card__excerpt {
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .blog-card__link {
+        display: block;
+        padding: 0.7em 2ch;
+        border: solid 2px $highlight_color;
+        background-color: $highlight_color;
+        color: $background_color;
+        border-radius: 35px;
+        text-decoration: none;
+        margin-left: 0;
+        font-family: $highlight_font;
+        cursor: pointer;
+    
+        &:hover {
+            border-color: $primary_color;
+            background-color: $primary_color;
+            color: $background_color;
+        }
+    }
+}

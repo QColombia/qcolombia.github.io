@@ -7,11 +7,15 @@ HOME ASPECTS SECTION CLASSES
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 70px auto;
+    margin: 70px auto 35px auto;
 
     h1 {
         margin-bottom: 35px;
     }
+}
+
+.home-aspects__title {
+    margin: 0 3ch;
 }
 
 .home-aspects__aspect-window {

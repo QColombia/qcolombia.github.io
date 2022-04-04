@@ -3,4 +3,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 title: "QColombia" # the name of your site, e.g. ACME Corp.
 lang: "es"
 contact_mail: "qworld.colombia@gmail.com"
-default_thumbnail: "/assets/favicon.svg"
+default_thumbnail: "/assets/img/favicon.svg"
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge

@@ -1,11 +1,11 @@
 ---
-layout: default
+layout: post
 title: "Simulación de un sistema de dos niveles: Resonancia Magnética y MASER"
 date: 2021-03-05 23:07:05
 category: Projects
 author: Diego Herrera
-thumbnail: /assets/img/_posts/TwoStateProblems_files/thumbnail.png
-excerpt: Revisamos el famoso problema del sistema de dos niveles en mecánica cuántica.
+thumbnail: /assets/img/posts/TwoStateProblems_files/thumbnail.png
+excerpt: Revisamos el famoso problema del sistema de dos niveles en mecánica cuántica. Discutimos las soluciones analíticas encontradas en la literatura, así como un estudio experimental de la precesión de espín con Qiskit.
 ---
 
 En este proyecto revisaremos el famoso problema del sistema de dos niveles en un potencial sinusoidal. Basaremos la discusión en las ideas del capítulo 5 del famoso libro de Sakurai y Napolitano sobre mecánica cuántica; así como las notas de clase de Barton Zweibach, profesor del MIT.
@@ -32,7 +32,7 @@ Pra mayor claridad, consideraremos una partícula de espín $1/2$ en presencia d
 > Aún más, el vector de Bloch del estado de un qubit es una representación bastante buena de lo que imaginamos como el espín de una partícula. Recomendamos al lector con poca familiaridad en física cuántica que traiga a su mente esta imagen a la hora de desarrollar una intuición en la realización de este proyecto.
 
 <p align="center">
-    <img src="/assets/img/_posts/TwoStateProblems_files/Blochsphere.png" width="500" height="300">
+    <img src="/assets/img/posts/TwoStateProblems_files/Blochsphere.png" width="500" height="300">
 </p>
 
 Sin pérdida de generalidad, consideraremos un campo magnético que puede representarse por un vector
@@ -125,8 +125,8 @@ circuito.draw(output='mpl')
 
 
 
-{:refdef: style="text-align: center;"}
-![png](/assets/img/_posts/TwoStateProblems_files/TwoStateProblems_4_0.png)
+{:refdef: style="text-align: center; width: 99%; overflow: scroll;"}
+![png](/assets/img/posts/TwoStateProblems_files/TwoStateProblems_4_0.png)
 {:refdef}
 
 
@@ -148,8 +148,8 @@ circuito.draw(output='mpl')
 
 
 
-{:refdef: style="text-align: center;"}
-![png](/assets/img/_posts/TwoStateProblems_files/TwoStateProblems_6_0.png)
+{:refdef: style="text-align: center; width: 99%; overflow: scroll;"}
+![png](/assets/img/posts/TwoStateProblems_files/TwoStateProblems_6_0.png)
 {:refdef}
 
 
@@ -166,8 +166,8 @@ plot_bloch_multivector(psi0)
 
 
 
-{:refdef: style="text-align: center;"}
-![png](/assets/img/_posts/TwoStateProblems_files/TwoStateProblems_8_0.png)
+{:refdef: style="text-align: center; width: 99%; overflow: scroll;"}
+![png](/assets/img/posts/TwoStateProblems_files/TwoStateProblems_8_0.png)
 {:refdef}
 
 
@@ -189,8 +189,8 @@ circuito.draw(output='mpl')
 
 
 
-{:refdef: style="text-align: center;"}
-![png](/assets/img/_posts/TwoStateProblems_files/TwoStateProblems_10_0.png)
+{:refdef: style="text-align: center; width: 99%; overflow: scroll;"}
+![png](/assets/img/posts/TwoStateProblems_files/TwoStateProblems_10_0.png)
 {:refdef}
 
 
@@ -208,8 +208,8 @@ plot_bloch_multivector(psit)
 
 
 
-{:refdef: style="text-align: center;"}
-![png](/assets/img/_posts/TwoStateProblems_files/TwoStateProblems_11_0.png)
+{:refdef: style="text-align: center; width: 99%; overflow: scroll;"}
+![png](/assets/img/posts/TwoStateProblems_files/TwoStateProblems_11_0.png)
 {:refdef}
 
 
@@ -253,8 +253,8 @@ Simul.draw(output='mpl')
 
 
 
-{:refdef: style="text-align: center;"}
-![png](/assets/img/_posts/TwoStateProblems_files/TwoStateProblems_15_0.png)
+{:refdef: style="text-align: center; width: 99%; overflow: scroll;"}
+![png](/assets/img/posts/TwoStateProblems_files/TwoStateProblems_15_0.png)
 {:refdef}
 
 
@@ -295,8 +295,8 @@ plt.show()
 ```
 
 
-{:refdef: style="text-align: center;"}
-![png](/assets/img/_posts/TwoStateProblems_files/TwoStateProblems_19_0.png)
+{:refdef: style="text-align: center; width: 99%; overflow: scroll;"}
+![png](/assets/img/posts/TwoStateProblems_files/TwoStateProblems_19_0.png)
 {:refdef}
 
 
@@ -403,8 +403,8 @@ slider = interactive(GraficarPDF,omega=(10,30,2))
 display(slider)
 ```
 
-{:refdef: style="text-align: center;"}
-![png](/assets/img/_posts/TwoStateProblems_files/prob_dens.png)
+{:refdef: style="text-align: center; width: 99%; overflow: scroll;"}
+![png](/assets/img/posts/TwoStateProblems_files/prob_dens.png)
 {:refdef}
 
 Al estudiar esta gráfica, observamos claramente un **ciclo de excitación-decaimiento**, con un periodo $T = \pi/\Omega_0$. La probabilidad de encontrar la partícula en el estado excitado tiene un valor máximo
@@ -432,8 +432,8 @@ plt.show()
 ```
 
 
-{:refdef: style="text-align: center;"}
-![png](/assets/img/_posts/TwoStateProblems_files/TwoStateProblems_23_0.png)
+{:refdef: style="text-align: center; width: 99%; overflow: scroll;"}
+![png](/assets/img/posts/TwoStateProblems_files/TwoStateProblems_23_0.png)
 {:refdef}
 
 
@@ -557,8 +557,8 @@ SimulRot.draw(output='mpl')
 
 
 
-{:refdef: style="text-align: center;"}
-![png](/assets/img/_posts/TwoStateProblems_files/TwoStateProblems_29_0.png)
+{:refdef: style="text-align: center; width: 99%; overflow: scroll;"}
+![png](/assets/img/posts/TwoStateProblems_files/TwoStateProblems_29_0.png)
 {:refdef}
 
 
@@ -680,8 +680,8 @@ plt.show()
 ```
 
 
-{:refdef: style="text-align: center;"}
-![png](/assets/img/_posts/TwoStateProblems_files/TwoStateProblems_37_0.png)
+{:refdef: style="text-align: center; width: 99%; overflow: scroll;"}
+![png](/assets/img/posts/TwoStateProblems_files/TwoStateProblems_37_0.png)
 {:refdef}
 
 
