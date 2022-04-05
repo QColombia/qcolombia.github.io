@@ -1,6 +1,6 @@
 # QColombia's website
 
-This repo containees the source code for QColombia's website. The build folder is generated with Jekyll, which is a static site generator based on Ruby programming language. The aim of this repo is to document the structure of the project. The main aspets are
+This repo containes the source code for QColombia's website. The build folder is generated with Jekyll, which is a static site generator based on Ruby programming language. The aim of this repo is to document the structure of the project. The main aspets are
 
 1. Group's general description
 1. Main layouts
