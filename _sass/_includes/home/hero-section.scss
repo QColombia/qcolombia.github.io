@@ -2,114 +2,85 @@
 HOME HERO SECTION CLASSES
 */
 
+$backgroundBlur: 5px;
+$navbarHeight: 70px;
+$minHeroHeight: 500px;
+$heroHeight: 100vh;
+$heroWidth: 100vw;
+
 .home-hero {
-    margin: 70px 0 0 0;
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    min-height: 500px;
-    height: calc(100vh - 70px);
-    overflow: hidden;
-    background-color: $primary_color;
+  margin: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: $heroWidth;
+  min-height: $minHeroHeight;
+  height: $heroHeight;
+  background-image: url("../img/Hero-bg-desktop.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: $background_color;
+  overflow: hidden;
+
+  @include media-md {
+    align-items: flex-start;
+  }
+
+  @include media-lg {
+    font-size: 1em;
+    align-items: flex-start;
+    background-position: 0% 0%;
+    text-align: left;
+    background-image: url("../img/Hero-bg-desktop.png");
+    min-height: 820px;
+  }
 }
 
-.home-hero__carousel {
-    width: 100vw;
-    height: 100%;
-    position: relative;
-    transition: transform 0.7s;
+.home-hero__content-wrapper {
+  margin-top: $navbarHeight;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2em 4ch;
+  max-width: 490px;
 
-    .home-hero__carousel__slide {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+  @include media-md {
+    align-items: flex-start;
+    text-align: left;
+    max-width: 700px;
+    padding: 2em 4ch;
+    font-size: 1.1em;
+    width: 80%;
+  }
+
+  @include media-lg {
+    max-width: 100%;
+    padding: 2em 6ch;
+    width: 65%;
+  }
+
+  @include media-xl {
+    min-width: 760px;
+    padding: 2em 8ch;
+    width: fit-content;
+    width: 50%;
+  }
 }
 
-#bogota-hero {
-    background-image: url("../img/Bogota-hero-bg.png");
-    background-color: $lighter_primary_color;
-    filter: blur(3px);
+.home-hero__title {
+  color: $highlight_color;
+  font-size: 3em;
+  padding: 0;
+  margin: 0;
 }
 
-#physics-hero {
-    background-image: url("../img/Physics-hero-bg.png");
-    background-color: $lighter_primary_color;
-    filter: blur(3px);
-}
-
-#code-hero {
-    background-image: url("../img/Code-hero-bg.png");
-    background-color: $lighter_primary_color;
-    filter: blur(3px);
-}
-
-.home-hero__carousel__button-container {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    z-index: 8;
-    left: 50%;
-    bottom: 0;
-    transform: translate(-50%, -80%);
-
-    button {
-        cursor: pointer;
-    }
-
-    .home-hero__carousel__button {
-        margin: 0 1ch;
-        height: 50px;
-        width: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        background: none;
-        font-size: 1.8em;
-        font-weight: 900;
-        padding: 0;
-        color: $tertiary_color;
-        border: 6px solid $tertiary_color;
-
-        &:hover {
-            color: $alternative_bg_color;
-            border: 6px solid $alternative_bg_color;
-        }
-    }
-
-    .home-hero__carousel__nav-button {
-        margin: 15px 1ch;
-        height: 15px;
-        width: 15px;
-        border-radius: 50%;
-        background: none;
-        font-weight: 300;
-        color: $tertiary_color;
-        border: 10px solid $tertiary_color;
-
-        &:hover {
-            color: $alternative_bg_color;
-            border: 10px solid $alternative_bg_color;
-        }
-    }
-
-    .home-hero__carousel__nav-button.active {
-        margin: 15px 1ch;
-        height: 15px;
-        width: 15px;
-        border-radius: 50%;
-        background: none;
-        font-weight: 300;
-        color: $alternative_bg_color;
-        border: 10px solid $alternative_bg_color;
-    }
+.home-hero__subtitle {
+  font-family: $subtitle_font;
+  margin: 3em 0;
 }
