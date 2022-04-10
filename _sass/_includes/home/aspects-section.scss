@@ -2,115 +2,147 @@
 HOME ASPECTS SECTION CLASSES
 */
 
+$backgroundBlur: 5px;
+$navbarHeight: 70px;
+$minSectionHeight: 500px;
+$sectionHeight: calc(100vh - 3em);
+$sectionWidth: 100vw;
+$iconWidth: 100px;
+$itemCardColor: $highlight_color;
+
 .home-aspects {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 70px auto 35px auto;
-
-    h1 {
-        margin-bottom: 35px;
-    }
-}
-
-.home-aspects__title {
-    margin: 0 3ch;
-}
-
-.home-aspects__aspect-window {
-    position: relative;
-    width: 300px;
-    overflow: hidden;
-
-    @include media-lg {
-        width: fit-content;
-    }
-}
-
-.home-aspects__button-container {
+    width: $sectionWidth;
+    height: $sectionHeight;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    background-image: url("../img/Aspects-bg-desktop.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 
-    @include media-lg {
-        display: none;
+    @include media-md {
+      justify-content: flex-end;
     }
 
-    .aspect__nav-button {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background-color: $tertiary_color;
-        border: none;
-        margin: 0 10px;
-        cursor: pointer;
-
-        &:hover {
-            background-color: $highlight_color;
-        }
+    @include media-lg {
+      min-height: 815px;
     }
 }
 
-.home-aspects__aspect-container {
-    display: flex;
-    transform: translate(0px);
-    transition: transform ease-in-out 0.5s;
+.home-aspects__title {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  color: $primary_color;
+  text-align: center;
 
-    @include media-lg {
-        transform: translate(0px) !important;
-    }
+  @include media-md {
+    text-align: left;
+  }
 }
 
-.home-aspects__aspect-item {
+.home-aspects__link-container {
+  background-color: $alternative_transparent_bg;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 4ch;
+  max-width: 490px;
+
+  @include media-md {
+    width: 80%;
+    align-items: flex-start;
+    text-align: left;
+    max-width: 700px;
+    font-size: 1.1em;
+  }
+
+  @include media-lg {
+    max-width: 100%;
+    padding: 2em 6ch;
+    width: 65%;
+  }
+
+  @include media-xl {
+    width: 50%;
+    min-width: 760px;
+    padding: 2em 8ch;
+  }
+}
+
+.home-aspects__link {
+  text-decoration: none;
+  color: $itemCardColor;
+  padding: 1.5em 5ch;
+  background-color: $primary_color;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 30px;
+  margin: 1em 0;
+  width: fit-content;
+  min-width: 300px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    .home-aspects__icon-wrapper {
+      transform: scale(1.01);  
+    }
+  }
+
+  @include media-md {
+    min-width: 400px;
+  }
+
+  @include media-xl {
+    min-width: 410px;
+  }
+}
+
+.home-aspects__icon-wrapper {
+  min-width: $iconWidth;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 2ch;
+}
+
+.home-aspects__text-wrapper {
+  width: calc(100% - #{$iconWidth});
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: $important_font;
+  font-size: 1.5em;
+
+  & > .left-text {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    text-align: center;
     justify-content: center;
-    min-width: 300px;
-    width: 300px;
-    padding: 35px;
+    width: fit-content;
+    transition: transform 0.3s ease-in-out;
+  }
 
-    @include media-lg {
-        margin: 0 20px;
-    }
+  & > .right-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    transition: transform 0.3s ease-in-out;
+  }
 
-    .aspect-item__icon {
-        color: $primary-color;
-        transition: all ease-in-out 0.2s;
-        transform: scale(1);
+  &:hover > .left-text {
+    transform: translate(1ch);
+  }
 
-        &:hover {
-            transform: scale(1.1);
-        }
-    }
-
-    .aspect-item__title {
-        margin: 32px 0 8px 0;
-    }
-
-    .aspect-item__description {
-        margin: 8px 0 16px 0;
-        max-height: 100px;
-        text-overflow: ellipsis;
-    }
-
-    .aspect-item__action {
-        display: block;
-        padding: 0.7em 2ch;
-        border: solid 2px $tertiary_color;
-        background-color: $background_color;
-        color: $tertiary_color;
-        border-radius: 35px;
-        text-decoration: none;
-        font-family: $highlight_font;
-        cursor: pointer;
-    
-        &:hover {
-            background-color: $tertiary_color;
-            color: $background_color;
-        }
-    }
+  &:hover > .right-text {
+    transform: translate(-1ch);
+  }
 }

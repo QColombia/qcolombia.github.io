@@ -3,11 +3,14 @@ SITE'S COLOR PALLET
 */
 
 $primary_color: #F4D35E;
+$transparent_primary_color: rgba(244, 211, 94, 0.95);
 $light_primary_color: #F6D8AE;
 $lighter_primary_color: #faebd6;
 $tertiary_color: #DA4167;
+$light_tertiary_color: #f97293;
 $background_color: #ffffff;
 $alternative_bg_color: #1b2d8d;
+$alternative_transparent_bg: rgba(27, 45, 141, 0.95);
 
 /*Text colors*/
 $primary_text_color: #2E4057;
@@ -18,8 +21,10 @@ $divider_color: $light_primary_color;
 
 /*functional colors*/
 $highlight_color: #1b2d8d;
+$soft_blue_color: #5171A5;
 $importance_color: #F4D35E; 
 $emphasis_color: #f5295c;
 
 /*Shadow colors*/
-$shadow_color: #dfdfdf;
+$shadow_color: #928C83;
+$dark_shadow_color: #b8b6b6;

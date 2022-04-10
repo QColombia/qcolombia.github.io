@@ -23,6 +23,8 @@ $heroWidth: 100vw;
   background-repeat: no-repeat;
   background-color: $background_color;
   overflow: hidden;
+  border: none;
+  box-sizing: border-box;
 
   @include media-md {
     align-items: flex-start;
@@ -30,15 +32,14 @@ $heroWidth: 100vw;
 
   @include media-lg {
     font-size: 1em;
-    align-items: flex-start;
     background-position: 0% 0%;
     text-align: left;
-    background-image: url("../img/Hero-bg-desktop.png");
-    min-height: 820px;
+    min-height: 815px;
   }
 }
 
 .home-hero__content-wrapper {
+  background-color: $transparent_primary_color;
   margin-top: $navbarHeight;
   height: 100%;
   width: 100%;
@@ -68,7 +69,6 @@ $heroWidth: 100vw;
   @include media-xl {
     min-width: 760px;
     padding: 2em 8ch;
-    width: fit-content;
     width: 50%;
   }
 }
